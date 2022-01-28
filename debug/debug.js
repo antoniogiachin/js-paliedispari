@@ -6,7 +6,7 @@ function palindromCheck (word1, word2){
     // le parole devono essere per forza lunghe uguali
     if (word1 < word2 || word1 > word2){
         ritorno= "non sono palindrome!"
-    } else {
+    } else{
 
         //Ciclo i caratteri delle parole
         for(let i = 0; i < word1.length; i++){
