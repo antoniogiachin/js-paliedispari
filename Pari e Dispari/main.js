@@ -34,10 +34,35 @@ function evenOddSum (x, y){
 let usrPick = prompt('Scegli Pari o Dispari');
 console.log('Hai scelto:' , usrPick);
 
+//Se utente sceglie diversamente
+if(usrPick !== 'Pari' && usrPick !== 'Dispari'){
+    
+    alert('Non hai scelto correttamente!');
+    window.location.reload();
+    
+}
+
 // Chiedo all'utente di scegliere un numero tra 1 e 5
 let usrNumber = parseInt(prompt('Inserisci un numero compreso tra 1 e 5'));
-console.log('Hai scelto il numero: ' , usrNumber);
 
+//Se non sceglie un numero corretto
+if(usrNumber <= 0  || isNaN(usrNumber) || usrNumber >= 6){
+
+    let i =0;
+    while(i < 1){
+
+        alert('errore');
+        usrNumber = parseInt(prompt('Inserisci un numero compreso tra 1 e 5'));
+
+        if(usrNumber > 0 && usrNumber < 6){            
+            i++
+        }
+
+    }
+
+
+}
+console.log('Hai scelto il numero: ' , usrNumber);
 
 // Estraggo numero casuale per computer 
 let computerNumber = randomComputerNumber();
