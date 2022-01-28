@@ -5,8 +5,6 @@ function randomComputerNumber() {
 
 }
 
-let results = randomComputerNumber();
-console.log(results);
 
 // Creo funzione per stabilire se numero e' pari o dispari
 function evenOddSum (x, y){
@@ -19,11 +17,11 @@ function evenOddSum (x, y){
     // verifico se pari o dispari
     if(sum % 2 == 0){
 
-        ritorno= 'Pari!';
+        ritorno= 'Pari';
 
     } else {
 
-        ritorno = 'Dispari!';
+        ritorno = 'Dispari';
 
     }
     
@@ -49,7 +47,7 @@ console.log("E' stato estratto il numero: " , computerNumber);
 let result = evenOddSum(usrNumber, computerNumber);
 console.log('La somma dei due numeri fa: ' , result);
 
-if(result === usrPick){
+if(result == usrPick){
     alert('Hai vinto!');
 } else {
     alert('Hai perso!');
