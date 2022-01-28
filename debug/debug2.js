@@ -75,7 +75,10 @@ button1.addEventListener('click',
         firstRow.classList.add('d-none');
 
         secondRow.classList.remove('d-none');
-                        
+        
+        
+        console.log('L utente ha scelto: ' , usrPick)
+        
         // Click button 2
         
         button2.addEventListener('click',
@@ -99,40 +102,36 @@ button1.addEventListener('click',
         
                 }
     
-                console.log('L utente ha scelto: ' , usrPick);
-
-                console.log('Il numero scelto dall utente e: ' , parseInt(usrNumber));
+                console.log('Il numero scelto dall utente e: ' , usrNumber);
 
                 // Calcolo numero random pc
                 computerNumber = randomComputerNumber();
-                console.log('numero pc ', computerNumber);
+                console.log('numero pc ', computerNumber)
 
-                // Funzione evenOdd
-                let sommaFunzione = evenOddSum(parseInt(usrNumber), computerNumber);
-                console.log(sommaFunzione);
+                //Sommo i numeri e calcolo se pari o dispari con funzione
+                let result = evenOddSum(usrNumber, computerNumber);
+                console.log('La somma dei due numeri fa: ' , result);
 
-
-                // Scrivo nel DOM
+                // Stampo in html i risultati
                 choicesHtml.innerHTML = `
+                
+                    <li>${usrPick}</li>
 
-                    <li> ${usrPick} </li>
-                    <li> ${usrNumber} </li>
-
+                    <li>${usrNumber}</li>                
+                
                 `;
 
-                computerNumberHtml.innerHTML = `<p> Il numero del Computer e' ${computerNumber}`;
-
-                sumHtml.innerHTML = `<h2> La somma dei numeri e': ${sommaFunzione}`;
-
-                resultHtml.innerHTML = `<h1>`
-
-                  // Decreto vittoria o sconfitta
-                  if(sommaFunzione == usrPick){
-                    resultHtml.innerHTML = `<h1> Complimenti hai vinto </h1>`;                    
-                } else{
-                    resultHtml.innerHTML = `<h1> Peccato hai perso! </h1>`;
-                }
+                computerNumberHtml.innerHTML = `
+                    <p> Il numero del computer e' ${computerNumber} </p>
+                `;
                 
+                sumHtml.innerHTML = `<h2>La somma dei due numeri e' ${result}</h2>`;
+
+                if(result == usrPick){
+                    resultHtml.innerHTML = `<h2> Complimenti hai vinto! </h2>`;
+                } else {
+                    resultHtml.innerHTML = `<h2> Complimenti hai vinto! </h2>`;
+                }
 
             }
             

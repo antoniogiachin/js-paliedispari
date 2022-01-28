@@ -9,7 +9,47 @@
 </head>
 <body>
     
+    <div class="container">
 
+        <!-- input pari o dispari -->
+        <div class="row" id="first-row">
+            <h3>Scegli Pari o Dispari</h3>
+            <div class="input-container">
+                <input type="text" id="odd-even">
+                <button id="next1">Avanti!</button>
+            </div>
+        </div>
+
+        <!-- input numero da 1 a 5 -->
+        <div class="row d-none" id="second-row">
+            <h3>Scegli un numero da 1 a 5</h3>
+            <div class="input-container">
+                <input type="number" min="1"; max="5" id="npick">
+                <button id="next2">Avanti!</button>
+            </div>
+        </div>
+
+        <!-- risultato -->
+        <div class="row2 d-none" id="third-row">
+
+            <div class="row mb-20">
+                <h2>Le tue scelte sono:</h2>
+                <ul id="choices">
+                    
+                </ul>
+            </div>
+
+            <div class="row mb-20" id="computer-number">
+            </div>
+
+            <div class="row mb-20" id="sum">
+            </div>
+            
+            <div class="row mb-20" id="result">
+            </div>
+        </div>
+
+    </div>
 
 
     <!-- JS Script -->
