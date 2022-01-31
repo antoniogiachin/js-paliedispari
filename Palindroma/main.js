@@ -1,42 +1,35 @@
 // Creo funzione per capire se parola inserita e' palindroma
 
-function palindromCheck (word1, word2){
-
+function palindromCheck (word){
+    //Creo variabile per return
     let ritorno;
-    // le parole devono essere per forza lunghe uguali
-    if (word1 < word2 || word1 > word2){
-        ritorno= "non sono palindrome!"
-    } else {
 
-        //Ciclo i caratteri delle parole
-        for(let i = 0; i < word1.length; i++){
+    // creao variabile per una seconda parola, uguale la prima ma da rovesciare
+    let word2 = word;
+    console.log( 'la parola da rovesciare è ' ,word2)
 
-            /* rovescio sotto sopra la word2*/
+    // Creo un array di lettere della parola
+    let wordSplit = word2.split('');
+    console.log( 'array di parola 2 è ' ,wordSplit)
+    // Rovescio l'array
+    let wordReverse = wordSplit.reverse();
+    console.log( 'array di parola 2 rovesciato è ' ,wordReverse)
+    // Unisco l'array in una parola
+    let ups2 = wordReverse.join('');
+    console.log(ups2);
 
-            let split2 = word2.split('');
-            // Crea un Array con le lettere
+    // Ciclo i caratteri delle parole
+    for(let i = 0 ; i < word.length; i++){
 
-            // Rovesciamo Array
-            let reverse2 = split2.reverse();
-
-            // Converto di nuovo in stringa reverse2
-            let upsWord2 = reverse2.join('');
-
-
-            if(word1[i] === upsWord2[i]){
-                ritorno = 'sono palindrome!'
-            } else {
-                ritorno = 'non sono palindrome!'
-            }
-
+        if(word[i] === ups2[i]){
+            ritorno = "La parola inserita è palindroma!"
+        } else {
+            ritorno = 'La parola inserita non è palindroma!'
         }
 
     }
 
-    return ritorno;
-
-
-
+    return ritorno
 }
 
 const button = document.getElementById('go');
@@ -46,13 +39,11 @@ button.addEventListener('click',
     function(){
         
         // Raccolgo le parole inserite nel form
-        let firstWord = document.getElementById('word1').value;
-        let secondWord = document.getElementById('word2').value;
-        console.log(firstWord);
-        console.log(secondWord);
+        let userWord = document.getElementById('word1').value;
+        console.log(userWord);
 
         // Eseguo la verifica usando la funzione
-        let verification = palindromCheck(firstWord, secondWord);
+        let verification = palindromCheck(userWord);
         console.log(verification);
 
         // Scambio visibilita' dei due div row
@@ -69,11 +60,11 @@ button.addEventListener('click',
 
         const wordResult = document.getElementById('word-result');
 
-        input.innerHTML=`Hai inserito le seguenti parole: `;
+        input.innerHTML=`Hai inserito la seguente parola: `;
 
-        wordList.innerHTML = `<li> ${firstWord}</li> <li> ${secondWord}</li>`;
+        wordList.innerHTML = `<li> ${userWord}</li>`;
 
-        wordResult.innerHTML = `Le due parole ${verification}`;
+        wordResult.innerHTML = `${verification}`;
     }
 
 
